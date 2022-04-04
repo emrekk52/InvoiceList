@@ -37,6 +37,7 @@ class PaymentTypeViewModel(application: Application) : AndroidViewModel(applicat
 
     fun deletePaymentTypeList(id: Int) {
         val res = operation.deletePaymentType(id)
+        //ödeme tipine ait ödemelerin silinmesi
         val res2 = paymentOperation.deleteTypePayment(id)
         getPaymentTypeList()
     }

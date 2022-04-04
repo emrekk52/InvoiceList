@@ -16,7 +16,6 @@
     <string name="paymentPeriodDay">period_day</string>
 
     // payment table column
-
     <string name="PAYMENT_TABLE_NAME">dbpayment</string>
     <string name="paymentAmount">amount</string>
     <string name="paymentDate">date</string>

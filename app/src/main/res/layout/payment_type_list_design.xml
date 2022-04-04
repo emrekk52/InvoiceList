@@ -19,7 +19,7 @@
         android:ellipsize="end"
         android:fontFamily="@font/roboto_bold"
         android:maxLines="1"
-        android:textSize="18sp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toStartOf="@+id/btnAddPayment"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,7 +34,7 @@
         android:ellipsize="end"
         android:fontFamily="@font/roboto_bold"
         android:maxLines="1"
-        android:textSize="18sp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/paymentName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/paymentName" />
@@ -48,7 +48,7 @@
         android:ellipsize="end"
         android:fontFamily="@font/roboto_bold"
         android:maxLines="1"
-        android:textSize="18sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/paymentPeriod"
         app:layout_constraintStart_toStartOf="parent"
