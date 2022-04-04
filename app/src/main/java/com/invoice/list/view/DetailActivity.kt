@@ -57,7 +57,7 @@ class DetailActivity : AppCompatActivity() {
     private fun deletePayment(payment: Payment) {
 
         AlertDialog.Builder(this)
-            .setTitle("Silmek istiyor musunuz?")
+            .setTitle("Ödemeyi silmek istiyor musunuz?")
             .setPositiveButton("Evet") { _, _ ->
                 paymentViewModel.deletePaymentList(payment.id!!)
                 showToast("Ödeme silindi!")

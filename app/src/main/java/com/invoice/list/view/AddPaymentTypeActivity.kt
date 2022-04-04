@@ -1,13 +1,14 @@
 package com.invoice.list.view
 
-import android.R
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import androidx.appcompat.app.AlertDialog
 import androidx.core.widget.doAfterTextChanged
+import com.invoice.list.R
 import com.invoice.list.databinding.ActivityAddPaymentTypeBinding
 import com.invoice.list.extension.Constant
 import com.invoice.list.extension.Constant.Companion.periodList
@@ -36,6 +37,7 @@ class AddPaymentTypeActivity : AppCompatActivity() {
 
     }
 
+    @SuppressLint("SetTextI18n")
     private fun updateIsSaveControl() {
 
 
@@ -78,13 +80,13 @@ class AddPaymentTypeActivity : AppCompatActivity() {
 
         paymentTypeViewModel.updatePaymentTypeList(model)
         showToast("Ödeme tipi güncellendi")
-        clearEditText()
+        finish()
     }
 
     private fun savePaymentType(model: PaymentType) {
         paymentTypeViewModel.addPaymentTypeList(model)
         showToast("Ödeme tipi eklendi")
-        clearEditText()
+        finish()
     }
 
     private fun deletePaymentType(id: Int) {
@@ -94,10 +96,6 @@ class AddPaymentTypeActivity : AppCompatActivity() {
 
     }
 
-    private fun clearEditText() {
-        binding.editPaymentHeader.setText("")
-        binding.editPaymentPeriodDay.setText("")
-    }
 
     var s = false
 
@@ -123,7 +121,15 @@ class AddPaymentTypeActivity : AppCompatActivity() {
         }
 
         binding.deleteBtn.setOnClickListener {
-            deletePaymentType(paymentType?.id!!)
+
+            AlertDialog.Builder(this)
+                .setTitle("Ödeme tipini silmek istiyor musunuz?")
+                .setPositiveButton("Evet") { _, _ ->
+                    deletePaymentType(paymentType?.id!!)
+                    showToast("Ödeme tipi silindi!")
+                }.setNegativeButton("Hayır", null)
+                .show()
+
         }
     }
 
@@ -142,7 +148,7 @@ class AddPaymentTypeActivity : AppCompatActivity() {
     private fun initializeSpinner() {
         val adapter = ArrayAdapter<Period>(
             this,
-            R.layout.select_dialog_item,
+           android.R.layout.select_dialog_item,
             Constant.periodList
         )
         binding.editPaymentPeriod.adapter = adapter
