@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    tools:context=".view.AddPaymentTypeActivity">
+
+
+    <TextView
+        android:id="@+id/paymentTypeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/defaultPadding"
+        android:text="@string/buttonPaymentTypeText"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editPaymentHeaderLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="@dimen/defaultPadding"
+        android:layout_marginEnd="16dp"
+        app:endIconMode="clear_text"
+        app:helperText="@string/requiredEditText"
+        app:helperTextEnabled="true"
+        app:helperTextTextColor="@color/purple"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paymentTypeText"
+        app:startIconDrawable="@drawable/ic_payment">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editPaymentHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:hint="@string/paymentHeader"
+            android:padding="@dimen/defaultPadding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/editPaymentPeriod"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/defaultPadding"
+        app:layout_constraintEnd_toEndOf="@+id/editPaymentHeaderLayout"
+        app:layout_constraintStart_toStartOf="@+id/editPaymentHeaderLayout"
+        app:layout_constraintTop_toBottomOf="@+id/editPaymentHeaderLayout" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editPaymentPeriodDayLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/defaultPadding"
+        app:endIconMode="clear_text"
+        app:layout_constraintEnd_toEndOf="@+id/editPaymentPeriod"
+        app:layout_constraintStart_toStartOf="@+id/editPaymentPeriod"
+        app:layout_constraintTop_toBottomOf="@+id/editPaymentPeriod"
+        app:startIconDrawable="@drawable/ic_day">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editPaymentPeriodDay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:hint="@string/paymentPeriodDayText"
+            android:inputType="number"
+            android:padding="@dimen/defaultPadding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/saveBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/defaultPadding"
+        android:text="@string/saveText"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/editPaymentPeriodDayLayout"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="@+id/editPaymentPeriodDayLayout"
+        app:layout_constraintTop_toBottomOf="@id/editPaymentPeriodDayLayout" />
+
+
+    <Button
+        android:id="@+id/deleteBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/defaultPadding"
+        android:text="@string/deleteText"
+        android:textAllCaps="false"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/editPaymentPeriodDayLayout"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="@+id/editPaymentPeriodDayLayout"
+        app:layout_constraintTop_toBottomOf="@+id/saveBtn" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Fatura Listesi</string>
+    <string name="buttonPaymentTypeText">Yeni ödeme tipi ekle</string>
+    <string name="requiredEditText">Bu alan doldurulmak zorunda*</string>
+    <string name="paymentHeader">Ödeme tipi başlığı</string>
+    <string name="paymentPeriodDayText">Ödeme günü</string>
+    <string name="paymentPeriodText">Ödeme periyodu</string>
+    <string name="saveText">Kaydet</string>
+    <string name="deleteText">Sil</string>
+
+
+    // payment type table column
+    <string name="PAYMENT_TYPE_TABLE_NAME">dbpaymenttype</string>
+    <string name="paymentName">name</string>
+    <string name="paymentPeriod">period</string>
+    <string name="paymentPeriodDay">period_day</string>
+
+    // payment table column
+
+    <string name="PAYMENT_TABLE_NAME">dbpayment</string>
+    <string name="paymentAmount">amount</string>
+    <string name="paymentDate">date</string>
+    <string name="paymentTypeId">type_id</string>
+
+
+
+    <string name="addPaymentText">Ödeme ekle</string>
+    <string name="editText">Düzenle</string>
+    <string name="paymentAmountText">Ödeme miktarı giriniz</string>
+
+
+</resources>

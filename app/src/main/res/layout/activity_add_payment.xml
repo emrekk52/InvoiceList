@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.AddPaymentActivity">
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editPaymentLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="@dimen/defaultPadding"
+        android:layout_marginEnd="16dp"
+        app:endIconMode="clear_text"
+        app:helperText="@string/requiredEditText"
+        app:helperTextEnabled="true"
+        app:helperTextTextColor="@color/purple"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:startIconDrawable="@drawable/ic_money">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editPayment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:hint="@string/paymentAmountText"
+            android:inputType="numberDecimal"
+            android:padding="@dimen/defaultPadding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/dateLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/defaultPadding"
+        android:background="?attr/selectableItemBackground"
+        app:cardCornerRadius="@dimen/defaultPadding"
+        app:cardElevation="@dimen/defaultPadding"
+        app:layout_constraintEnd_toEndOf="@+id/editPaymentLayout"
+        app:layout_constraintStart_toStartOf="@+id/editPaymentLayout"
+        app:layout_constraintTop_toBottomOf="@id/editPaymentLayout">
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/defaultPadding"
+            android:text="Tarih : 02.02.2022" />
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btnAddPayment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/defaultPadding"
+        android:text="@string/saveText"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dateLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
