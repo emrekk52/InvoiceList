@@ -12,7 +12,7 @@ class PaymentTypeOperation(val context: Context) {
 
     private var paymentTypeListDatabase: SQLiteDatabase? = null
     private val dbOpenHelper: DatabaseOpenHelper =
-        DatabaseOpenHelper(context, context.getString(R.string.PAYMENT_TYPE_TABLE_NAME), null, 1)
+        DatabaseOpenHelper(context, context.getString(R.string.PAYMENT_TYPE_TABLE_NAME), null,1)
 
 
     private fun open() {

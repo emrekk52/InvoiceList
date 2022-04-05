@@ -44,8 +44,7 @@ class DatabaseOpenHelper(
         p0.execSQL(query)
     }
 
-    override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {
-
+    override fun onUpgrade(p0: SQLiteDatabase?, old: Int, new: Int) {
 
     }
 
