@@ -7,7 +7,6 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import com.invoice.list.R
 import com.invoice.list.model.Payment
-import com.invoice.list.model.PaymentType
 
 class PaymentOperation(val context: Context) {
 
@@ -94,13 +93,13 @@ class PaymentOperation(val context: Context) {
     }
 
     // bağlı olduğu ödeme tipinde ki tüm ödemeleri siler
-    fun deleteTypePayment(paymentId: Int): Int {
+    fun deleteTypePayment(paymentTypeId: Int): Int {
 
         open()
 
         val result = paymentDatabase!!.delete(
             context.getString(R.string.PAYMENT_TABLE_NAME),
-            "${context.getString(R.string.paymentTypeId)}=$paymentId",
+            "${context.getString(R.string.paymentTypeId)}=$paymentTypeId",
             null
         )
 
