@@ -24,7 +24,6 @@ class PaymentViewModel(application: Application, val paymentId: Int) :ViewModel(
 
 
     fun addPaymentList(model: Payment) {
-        println(model.paymentTypeId)
         val res = operation.addPayment(model)
         getPaymentList()
     }
@@ -37,9 +36,10 @@ class PaymentViewModel(application: Application, val paymentId: Int) :ViewModel(
 
 }
 
-class PaymentViewModelFactory(private val mApplication: Application, private val mParam: Int) :
+//PaymentViewmodel sınıfında context ve ödeme id'si kullanmak üzere parametre yollayabilmemize olanak sağlar
+class PaymentViewModelFactory(private val application: Application, private val param: Int) :
     ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        return PaymentViewModel(mApplication, mParam) as T
+        return PaymentViewModel(application, param) as T
     }
 }

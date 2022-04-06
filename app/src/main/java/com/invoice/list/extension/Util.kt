@@ -23,6 +23,8 @@ fun Activity.showToast(message: String) {
     Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 }
 
+
+// startIntent ile daha pratik geçiş ve veri göndermek
 fun Activity.startIntent(
     targetActivity: Class<out Activity>,
     key: String? = null,
